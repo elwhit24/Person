@@ -13,7 +13,6 @@ public class Person
     public Person(String name)
     {
         this.name = name;
-        
         friendList = new ArrayList<String>();
     }
 
@@ -50,7 +49,6 @@ public class Person
         return friendList.get(friendIndex);
         } else {
             return "Index out of range";
-            
             }
     }
 }
