@@ -34,7 +34,7 @@ public class Person
     {
         String allFriends = "";
         allFriends = friendList.toString();
-        allFriends = allFriends.substring(1, allFriends.lastIndexOf("}", allFriends.length()));
+        allFriends = allFriends.substring(1, allFriends.lastIndexOf("}")+2);
         return allFriends;
     }
 
