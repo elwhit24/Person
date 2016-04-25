@@ -8,14 +8,13 @@ import java.util.ArrayList;
 public class Person
 {
     private String name;
-    private ArrayList<String> friendList;
+    private ArrayList<String> friendList = new ArrayList<String>();;
     
     public Person(String name)
     {
         this.name = name;
-        friendList = new ArrayList<String>();
+        this.friendList.clear();
     }
-
     /**
      * Adds the given friend to this Person's friends list.
      * @param friend the friend to add.
@@ -32,12 +31,10 @@ public class Person
      */
     public String getFriends()
     {
-        String allFriends = "";
+        String allFriends;
         allFriends = friendList.toString();
-        allFriends = allFriends.substring(1, allFriends.lastIndexOf("}")+2);
-        return allFriends;
+        return allFriends.substring(1, allFriends.length() - 1);
     }
-
     /**
      * Gets a friend at a given index.
      * @param friendIndex the index at which to find the friend (starting at 0)
@@ -47,8 +44,11 @@ public class Person
     {
         if (friendIndex >= 1 || friendIndex <= friendList.size() - 1) {
         return friendList.get(friendIndex);
+        } else if (friendIndex == 0) {
+            return friendList.get(friendIndex + 1);
         } else {
             return "Index out of range";
+           
             }
     }
 }
